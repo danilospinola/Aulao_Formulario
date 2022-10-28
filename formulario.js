@@ -11,7 +11,7 @@ form.addEventListener('submit', (event) => {
     comparePassword();
     RAValidate();
     ValidarDescricao();
-    calcular();
+    calcular();// calcula
 });
 
 
