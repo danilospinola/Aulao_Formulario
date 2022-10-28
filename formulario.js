@@ -9,7 +9,15 @@ form.addEventListener('submit', (event) => {
     emailValidate();
     mainPasswordValidate();
     comparePassword();
+    RAValidate();
+    ValidarDescricao();
+    calcular();
 });
+
+
+function colocar(){
+
+}
 
 function setError(index){
     campos[index].style.border = '2px solid #e63636';
@@ -43,20 +51,60 @@ function emailValidate(){ // função que valida o email
     }
 }
 
-function mainPasswordValidate(){ //função que valida a senha
-    if(campos[2].value.length < 8)
+function RAValidate(){ // função que valida o RA
+    if(campos[2].value.length < 13)
     {
         setError(2);
     }
-    else{
+    else
+    {
         removeError(2);
     }
 }
 
-function comparePassword(){ //compara os dois campos de senha
-    if(campos[2].value == campos[3].value && campos[3].value.length >= 8) {
-        removeError(3);
-    }else {
+function mainPasswordValidate(){ //função que valida a senha
+    if(campos[3].value.length < 8)
+    {
         setError(3);
     }
+    else{
+        removeError(3);
+    }
+}
+
+function comparePassword(){ //compara os dois campos de senha
+    if(campos[3].value == campos[4].value && campos[4].value.length >= 8) {
+        removeError(4);
+    }else {
+        setError(4);
+    }
+}
+function ValidarDescricao(){ //função que valida a senha
+        if(campos[5].value.length < 100)
+        {
+            setError(5);
+        }
+        else{
+            removeError(5);
+        }
+}
+
+function chamar(){
+    document.getElementById('nomeAluno').innerHTML = campos[0].value
+}
+
+function chamar2(){
+
+    document.getElementById('Email').innerHTML =  campos[1].value;
+}
+
+function chamar3(){
+
+    document.getElementById('RA').innerHTML =  campos[2].value;
+}
+
+function calcular(){
+    chamar();
+    chamar2();
+    chamar3();
 }

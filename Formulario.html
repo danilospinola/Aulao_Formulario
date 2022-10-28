@@ -17,8 +17,12 @@
                 <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
             </div>
             <div>
-                <input type="email" placeholder="Digite seu melhor email" class="inputs required" oninput="emailValidate()">
+                <input type="email" placeholder="Digite seu email" class="inputs required" oninput="emailValidate()">
                 <span class="span-required">Digite um email válido</span>
+            </div>
+            <div>
+                <input type="number" placeholder="Digite seu RA" class="inputs required" oninput="RAValidate()">
+                <span class="span-required">Digite um RA válido</span>
             </div>
             <div>
                 <input type="password" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()">
@@ -28,7 +32,8 @@
                 <input type="password" placeholder="Repita a sua senha" class="inputs required" oninput="comparePassword()">
                 <span class="span-required">Senhas devem ser compatíveis</span>
             </div>
-            <textarea class="inputs" name="descricao" id="descricao" cols="25" rows="10" placeholder="Fale um pouco sobre você..."></textarea>
+            <textarea class="inputs required" name="descricao" id="descricao" cols="25" rows="10"  oninput="ValidarDescricao()" placeholder="Digite um pouco sobre seu aluno... No minínmo 100 caracteres"></textarea>
+            <span class="span-required">O aluno deve ter no minímo uma descrição de 100 caracteres.</span>
             <p>Sexo:</p>
             <div class="box-select">
                 <div>
@@ -44,27 +49,29 @@
                     <label for="o">Outro</label>
                 </div>
             </div>
-            <p>Quais suas experiências?</p>
-            <div class="box-select">
-                <div>
-                    <input type="checkbox" id="html" value="html" name="experiencias">
-                    <label for="html">Html</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="css" value="css" name="experiencias">
-                    <label for="css">CSS</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="js" value="js" name="experiencias">
-                    <label for="js">JavaScript</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="php" value="php" name="experiencias">
-                    <label for="php">PHP</label>
-                </div>
-            </div>
+
             <button type="submit">Enviar</button>
         </form>
+    
+        <table width="657" border="1px" class="table2">
+            <tr>
+              <td width="141" height="40"><h1 class="nome">Nome</h1>
+              </td>
+              <td width="163"><h1 class="valor">Email</h1>
+              </td>
+              <td width="150"><h1 class="parcelas">RA</h1>
+              </td>
+            </tr>
+            <tr>
+              <td height="40"><h1 id="nomeAluno" class="resposta"> 
+            </h1></td>
+              <td><h1 id="Email" class="resposta"> 
+            </h1></td>
+              <td><h1 id="RA" class="resposta"> 
+            </h1></td>
+           </tr>
+        </table>
+
     </div>
 </body>
 <script type="text/javascript" src="formulario.js"></script>
